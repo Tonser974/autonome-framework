@@ -1,0 +1,32 @@
+id: text-processing
+name: Text Processing Pipeline
+type: sequential
+description: Clean, analyze sentiment, and summarize any text content
+
+globals:
+  model: claude-3-5-sonnet-20241022
+  temperature: 0.3
+  max_tokens: 1500
+
+taskDefinitions:
+  - id: clean-text
+    name: Clean and Normalize Text
+    agentId: textCleanerAgent
+    input:
+      raw_text: "${raw_text}"
+    outputKey: cleaned_text
+    
+  - id: analyze-sentiment
+    name: Analyze Sentiment
+    agentId: sentimentAnalyzerAgent
+    input:
+      text: "${cleaned_text}"
+    outputKey: sentiment
+    
+  - id: summarize
+    name: Generate Summary
+    agentId: summarizerAgent
+    input:
+      text: "${cleaned_text}"
+      sentiment: "${sentiment}"
+    outputKey: summary

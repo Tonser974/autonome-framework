@@ -1,0 +1,14 @@
+id: subflow1
+name: Real Subflow
+type: conversational
+description: A real subflow test
+
+taskDefinitions:
+  - id: t1
+    name: Echo Agent
+    description: Returns user input
+    agentId: echoAgent
+    input:
+      user_input: "Hi from subflow"
+    outputKey: echoOut
+    optional: false

@@ -1,0 +1,32 @@
+id: resume-analysis
+name: Resume Analysis Pipeline
+type: sequential
+description: Multi-step resume analysis with parsing, skill extraction, and summarization
+
+globals:
+  model: claude-3-5-sonnet-20241022
+  temperature: 0.3
+  max_tokens: 2000
+
+taskDefinitions:
+  - id: parse-resume
+    name: Parse Resume Structure
+    agentId: resumeParserAgent
+    input:
+      resume_text: "${resume_text}"
+    outputKey: parsed_data
+    
+  - id: extract-skills
+    name: Extract Technical Skills
+    agentId: skillExtractorAgent
+    input:
+      parsed_data: "${parsed_data}"
+    outputKey: skills
+    
+  - id: generate-summary
+    name: Generate Professional Summary
+    agentId: summaryGeneratorAgent
+    input:
+      parsed_data: "${parsed_data}"
+      skills: "${skills}"
+    outputKey: summary

@@ -1,0 +1,25 @@
+# Ignore IntelliJ / VSCode configs
+.idea/
+.vscode/
+
+# Build output
+target/
+build/
+out/
+
+# Maven or Gradle
+*.iml
+*.class
+*.jar
+*.war
+*.log
+
+# OS files
+.DS_Store
+
+# Secrets and environment files
+.env
+*.env
+custom.properties
+application-local.properties
+application-secret.properties

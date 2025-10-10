@@ -1,0 +1,21 @@
+id: demo-flow
+name: My Flow
+type: sequential
+description: Demo flow for testing
+globals:
+  key1: value1
+taskDefinitions:
+  - id: task1
+    name: Say Hello
+    agentId: echo-agent
+    input:
+      message: "Hello!"
+    outputKey: result1
+    optional: false
+
+  - id: task2
+    name: Optional Task
+    agentId: log-agent
+    input:
+      message: "Optional run"
+    optional: true

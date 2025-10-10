@@ -1,0 +1,34 @@
+id: support-ticket-router
+name: Support Ticket Router
+type: sequential
+description: Classify, route, and generate draft responses for support tickets
+
+globals:
+  model: claude-3-5-sonnet-20241022
+  temperature: 0.4
+  max_tokens: 1500
+
+taskDefinitions:
+  - id: classify-ticket
+    name: Classify Ticket Type
+    agentId: ticketClassifierAgent
+    input:
+      ticket_text: "${ticket_text}"
+      customer_info: "${customer_info}"
+    outputKey: classification
+    
+  - id: route-ticket
+    name: Route to Department
+    agentId: routingAgent
+    input:
+      classification: "${classification}"
+    outputKey: department
+    
+  - id: generate-response
+    name: Generate Draft Response
+    agentId: responseGeneratorAgent
+    input:
+      ticket_text: "${ticket_text}"
+      classification: "${classification}"
+      department: "${department}"
+    outputKey: draft_response

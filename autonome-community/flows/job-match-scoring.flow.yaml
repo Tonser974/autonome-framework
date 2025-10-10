@@ -1,0 +1,18 @@
+id: job-match-scoring
+name: Job Match Scoring Flow
+type: sequential
+description: AI-powered candidate-job match scoring with detailed analysis
+
+globals:
+  model: claude-3-5-sonnet-20241022
+  temperature: 0.3
+  max_tokens: 2000
+
+taskDefinitions:
+  - id: score-match
+    name: Score Candidate-Job Match
+    agentId: jobMatchScoringAgent
+    input:
+      job_data: "${job_data}"
+      candidate_data: "${candidate_data}"
+    outputKey: match_result

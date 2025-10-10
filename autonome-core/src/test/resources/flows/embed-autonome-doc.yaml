@@ -1,0 +1,28 @@
+id: autonome-doc-embed
+name: Embed Autonome Docs
+type: sequential
+description: Embed Autonome documentation content into Supabase for later search
+
+globals:
+  doc_text: |
+    Autonome is a framework for building agentic applications. 
+    It supports sequential, parallel, and conversational flow engines.
+    Agents can be defined using Java, REST, or LLM-based configurations.
+    Subflows and conditional execution are supported.
+    Each flow can be stored in YAML and loaded dynamically.
+
+taskDefinitions:
+  - id: embedDoc
+    agentId: openAIEmbedAgent
+    input:
+      user_input: "@doc_text"
+    outputKey: embedding
+    optional: false
+
+  - id: insertDoc
+    agentId: supabaseInsertAgent
+    input:
+      text: "@doc_text"
+      embedding: "@embedding"
+    outputKey: insert_status
+    optional: false

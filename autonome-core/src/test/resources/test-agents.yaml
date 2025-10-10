@@ -1,0 +1,63 @@
+- agentId: greetAgent
+  name: Greeting Agent
+  type: LLM
+  systemPrompt: "You are a helpful assistant"
+  enabledExtensions:
+    - FetchFromDatabase
+
+- agentId: summarizerAgent
+  name: Summarizer Agent
+  type: LLM
+  systemPrompt: "You are a summarizer. Respond with one short summary."
+  enabledExtensions: []
+  humanInLoopEnabled: false
+  config: {}
+
+- agentId: searchAgent
+  name: Web Search Agent
+  type: LLM
+  systemPrompt: "You are a helpful assistant that performs web searches and answers using the results."
+  enabledExtensions:
+    - WebSearch
+  config: {}
+
+- agentId: fakeAgent
+  type: java
+  config:
+    class: com.example.FakeAgent
+
+- agentId: loadAgent
+  name: Load Agent
+  type: java
+  config:
+    class: org.autonome.agentcore.builtin.docqa.LoadDocAgent
+
+- agentId: chunkAgent
+  name: Chunk Agent
+  type: java
+  config:
+    class: org.autonome.agentcore.builtin.docqa.ChunkerAgent
+
+- agentId: embedAgent
+  name: Embed Agent
+  type: java
+  config:
+    class: org.autonome.agentcore.builtin.docqa.EmbedAgent
+
+- agentId: queryAgent
+  name: Query Agent
+  type: java
+  config:
+    class: org.autonome.agentcore.builtin.docqa.QueryAgent
+
+- agentId: openAIEmbedAgent
+  name: OpenAI Embedding Agent
+  type: java
+  config:
+    class: org.autonome.agentcore.sampleagents.OpenAIEmbeddingAgent
+
+- agentId: supabaseInsertAgent
+  name: Supabase Insert Agent
+  type: java
+  config:
+    class: org.autonome.agentcore.sampleagents.SupabaseInsertAgent
