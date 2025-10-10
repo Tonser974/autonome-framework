@@ -622,10 +622,39 @@ Built for the enterprise Java community.
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/autonome.git
+git clone https://github.com/vikrambhanot/autonome-framework.git
+
+#add LLM key for ANTHROPIC
+cd autonome-community
+create custom.properties file
+
+Add the following properties to custom.properties. Replace < your-anthropic-api-key > with actual key
+# === Application Name ===
+SPRING_APPLICATION_NAME=autonome-community
+
+# === Context Store ===
+AUTONOME_CONTEXT_STORE=in-memory
+
+# === Flow / Agent Config ===
+AUTONOME_FLOWS_DIR=flows/
+AUTONOME_FLOWS_DEFAULT=job-match-scoring.flow.yaml
+AUTONOME_AGENTS_PATH=flows/agents.yaml
+AUTONOME_PLUGINS_DIR=plugins/
+AUTONOME_METADATA_YAML=metadata.yaml
+
+# === OpenAI Config ===
+OPENAI_MODEL=gpt-4o
+OPENAI_API_URL=https://api.openai.com/v1/chat/completions
+OPENAI_API_KEY=<your-openai-api-key>
+
+# === Anthropic Config ===
+ANTHROPIC_API_KEY=< your-anthropic-api-key >
+CLAUDE_DEFAULT_MODEL=claude-3-5-sonnet-20241022
+CLAUDE_DEFAULT_TEMPERATURE=0.3
+CLAUDE_DEFAULT_MAX_TOKENS=2000
 
 # Build all modules
-cd autonome
+cd autonome (or parent folder)
 mvn clean install
 
 # Run the community examples
