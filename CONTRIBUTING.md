@@ -84,7 +84,7 @@ Example: `feat: add Redis-based context store with TTL support`
 
 ```bash
 # Clone the repository
-git clone https://github.com/vikrambhanot/autonome-framework.git
+git clone https://github.com/aibroughttolife/autonome-framework.git
 cd autonome-framework
 
 # Build all modules
